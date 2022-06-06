@@ -316,23 +316,31 @@
                     <h4>Last 10 Entries Timings</h4>
                 </div>
                 <div class="container pd-0">
-                    <div class="timeline">
+                    <div class="container pd-0">
+                        <div class="timeline mb-30">
                         <ul>
                             {% for Test in query_results %}
                             <li class="timelne">
-                                {{Test.CreatedAt|date}}
-                                <br>
-                                {{Test.CreatedAt|time}}
-                                <br>
-                                {{Test.CartridgeLifeLeft}}
+                                <div class="timeline-date">
+                                    <i class="fa fa-calendar" style="margin-right:4px;"></i>{{Test.CreatedAt|date}}
+                                    <br>
+                                    {{Test.CreatedAt|time}} <i class="fa fa-clock-o"style="margin-right:4px;"></i>{{inhalation.time}}
+                                </div>
+                                <div class="timeline-desc">	
+                                    <p style="margin: 47px 5px -6px 93px;"></p>
+                                </div>
+                                
                             </li>
                             {% endfor %}
 
                         </ul>
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
+   
+        
         <div class="col-xl-8 mb-40">
             <div class="card-box height-90-p pd-20 mb-30">
                 <div class="row">

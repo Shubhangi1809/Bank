@@ -13,6 +13,9 @@ urlpatterns = [
     path('profile/', views.profile, name='EtBr-profile'),
     path('reports/', views.reports, name='EtBr-reports'),
     path('help/', views.help, name='EtBr-help'),
+    path('Download_CSV/', views.CSV, name='Export_CSV'),
+    # path('Download_PDF/', views.CalendarView, name='Export_PDF'),
+    path('Download_XLSX/', views.XLSX, name='Export_XLSX'),
     ]
 
 if  settings.DEBUG:

@@ -1,8 +1,10 @@
+import zoneinfo
 from email.policy import default
 from django.db import models
 import uuid
 from django.contrib.auth.models import User
 from PIL import Image
+from django.utils import timezone
 
 
 
@@ -35,7 +37,7 @@ class Test(models.Model):
 
 class Project(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    Profile_Pic = models.ImageField(default="default.png", upload_to ="profile_pics")
+    Profile_Pic = models.ImageField(default="default.png", upload_to ="mediafiles/profile_pics")
     FullName = models.CharField(max_length=200)
     PhoneNo = models.CharField(max_length=10)
     Age = models.CharField(max_length=2)
@@ -47,13 +49,7 @@ class Project(models.Model):
     def __str__(self):
         return f"{self.user.username} Project"
 
-    # def save(self):
-    #     super().save()
-    #     img = Image.open(self.Profile_Pic.path)
-    #     if img.height > 300 or img.width > 300:
-    #         output_size = (300, 300)
-    #         img.thumbnail(output_size)
-    #         img.save(self.Profile_Pic.path)
+
 
 
 
